@@ -6,6 +6,10 @@
 body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+body::selection{
+    background: #072f64;
+    color: white;
+}
 header{
     background: transparent;
     padding: 10px 0;
@@ -31,6 +35,7 @@ header a{
     text-decoration: none;
     font-size: 20px;
     color: #0066eb;
+    font-weight: 600;
     transition: 0.3s;
 }
 header a:hover{
@@ -45,9 +50,10 @@ header .title{
 }
 header .title img{
     height: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 2px 2px #00c1fcb7;
+    /* border-radius: 10px;
+    box-shadow: 0 0 2px 2px #00c1fcb7; */
     animation: logo 3s forwards infinite;
+    cursor: pointer;
 }
 @keyframes logo{
     0%{
@@ -64,7 +70,7 @@ header .title #sp-1{
     color: #0066eb;
 }
 header .btns button{
-    padding: 10px 40px;
+    padding: 10px 30px;
     border-radius: 5px;
     border: 2px solid #0066eb;
     outline: none;
@@ -79,33 +85,92 @@ header .btns button:hover{
     color: white;
     cursor: pointer;
     transform: scale(1.1);
+    box-shadow: 0 0 10px #0066eb;
 }
-
-
 
 /* Hero Section  */
 #hero{
-    padding: 30px 0;
+    padding: 40px 10px;
 
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 120px;
-    flex-direction: column;
-    text-align: center;
+    /* gap: 120px; */
 }
 #hero .left-c #sp-1{
     color: #0066eb;
-    /* border-bottom: 4px solid #0066eb;
-    padding-bottom: 2px; */
 }
 #hero .left-c h3{
     padding: 10px 0;
+    letter-spacing: 2px;
     font-size: 40px;
+}
+#hero .left-c h2{
+    text-shadow: 0 0 6px rgb(167, 167, 167);
+
+}
+#hero .left-c p{
+    padding: 20px 0;
+    font-size: 18px;
+    color: rgb(146, 146, 146);
+}
+#hero .btn button{
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 2px solid #0066eb;
+    outline: none;
+    background: transparent;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0066eb;
+    transition: 0.3s;
+}
+#hero .btn{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    margin: 10px 0;
+}
+#hero .btn #bt-1{
+    background-color: #0066eb;
+    color: white;
+}
+#hero .btn #bt-2{
+    padding: 10px 50px;
+}
+#hero .btn button:hover{
+    background-color: #0066eb;
+    color: white;
+    cursor: pointer;
+    transform: skewX(20deg);
+    box-shadow: 0 0 10px #0066eb;
 }
 #hero .right-c img{
     height: 400px;
-    width: 300px;
+    width: 350px;
     object-fit: cover;
+    box-shadow: 0 0 10px #0066eb;
     border-radius: 5px;
+    animation: img 5s forwards infinite;
 }
+@keyframes img{
+    0%{
+        transform: translateY(-10px);
+        /* transform: skewX(20deg); */
+
+    }
+    50%{
+        transform: translateY(10px);
+        /* transform: skewX(0deg); */
+    }
+    75%{
+        /* transform: translateY(10px); */
+        /* transform: skewX(-20deg); */
+    }
+    100%{
+        transform: translateY(-10px);
+        /* transform: skewX(20deg); */
+    }
+}
+/* Features Section */
