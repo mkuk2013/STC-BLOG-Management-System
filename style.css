@@ -78,8 +78,8 @@ header .btns button:hover{
     background-color: #0066eb;
     color: white;
     cursor: pointer;
+    transform: scale(1.1);
 }
-
 
 
 
@@ -90,10 +90,22 @@ header .btns button:hover{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 50px;
+    gap: 120px;
+    flex-direction: column;
+    text-align: center;
+}
+#hero .left-c #sp-1{
+    color: #0066eb;
+    /* border-bottom: 4px solid #0066eb;
+    padding-bottom: 2px; */
+}
+#hero .left-c h3{
+    padding: 10px 0;
+    font-size: 40px;
 }
 #hero .right-c img{
     height: 400px;
     width: 300px;
     object-fit: cover;
+    border-radius: 5px;
 }
