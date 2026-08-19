@@ -1,69 +1,83 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-header{
+
+header {
     background: transparent;
     padding: 10px 0;
     position: static;
     top: 0;
     left: 0;
 }
-header nav{
+
+header nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-header ul{
+
+header ul {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
-header ul li{
+
+header ul li {
     list-style: none;
 }
-header a{
+
+header a {
     text-decoration: none;
     font-size: 20px;
     color: #0066eb;
     transition: 0.3s;
 }
-header a:hover{
+
+header a:hover {
     transform: translateY(-6px);
     color: #053c4db7;
 }
-header .title{
+
+header .title {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
-header .title img{
+
+header .title img {
     height: 40px;
     border-radius: 10px;
     box-shadow: 0 0 2px 2px #00c1fcb7;
     animation: logo 3s forwards infinite;
 }
-@keyframes logo{
-    0%{
+
+@keyframes logo {
+    0% {
         transform: scale(0.90);
     }
-    50%{
+
+    50% {
         transform: scale(1.1);
     }
-    100%{
+
+    100% {
         transform: scale(0.90);
     }
 }
-header .title #sp-1{
+
+header .title #sp-1 {
     color: #0066eb;
 }
-header .btns button{
+
+header .btns button {
     padding: 10px 40px;
     border-radius: 5px;
     border: 2px solid #0066eb;
@@ -74,7 +88,8 @@ header .btns button{
     color: #0066eb;
     transition: 0.3s;
 }
-header .btns button:hover{
+
+header .btns button:hover {
     background-color: #0066eb;
     color: white;
     cursor: pointer;
@@ -84,7 +99,7 @@ header .btns button:hover{
 
 
 /* Hero Section  */
-#hero{
+#hero {
     padding: 30px 0;
 
     display: flex;
@@ -94,18 +109,221 @@ header .btns button:hover{
     flex-direction: column;
     text-align: center;
 }
-#hero .left-c #sp-1{
+
+#hero .left-c #sp-1 {
     color: #0066eb;
     /* border-bottom: 4px solid #0066eb;
     padding-bottom: 2px; */
 }
-#hero .left-c h3{
+
+#hero .left-c h3 {
     padding: 10px 0;
     font-size: 40px;
 }
-#hero .right-c img{
+
+#hero .right-c img {
     height: 400px;
     width: 300px;
     object-fit: cover;
     border-radius: 5px;
+}
+
+
+/* bolg section */
+
+.blog {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #f5faff;
+    align-items: center;
+    gap: 40px;
+}
+
+.blog-h {
+    text-align: center;
+}
+
+#blog-design {
+    color: #0066eb;
+    font-size: 50px;
+}
+
+#blog-resign {
+    color: #0a52b1c4;
+    font-size: 40px;
+}
+
+
+.blog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background: white;
+    box-shadow: 0 2px 5px #0066eb;
+    border-radius: 20px;
+    width: 900px;
+    padding: 30px
+}
+
+
+
+.write-one {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.write-one input {
+    width: 850px;
+    padding: 5px;
+}
+
+.write-one input:focus {
+    box-shadow: 0 0 10px #0066eb;
+}
+
+
+
+.write-icon-one {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.write-icon-one svg {
+    color: #0066eb;
+}
+
+
+
+.write-two {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.write-two select {
+    width: 850px;
+    padding: 5px;
+}
+
+.write-two select:focus {
+    box-shadow: 0 0 10px #0066eb;
+}
+
+.write-icon-two {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.write-icon-two svg {
+    color: #0066eb;
+}
+
+
+.write-three {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.write-three textarea {
+    padding: 5px;
+    width: 850px;
+    height: 100px;
+}
+
+.write-three textarea:focus {
+    box-shadow: 0 0 10px #0066eb;
+}
+
+.write-icon-three {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.write-icon-three svg {
+    color: #0066eb;
+}
+
+
+.blog-btns {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-one {
+    border: 2px solid #0066eb;
+    border-radius: 5px;
+    background: transparent;
+    color: #0066eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.btn-one:hover {
+    background: #0066eb;
+    box-shadow: 0 0 10px #0066eb;
+    color: white;
+}
+
+.btn-two {
+    border: 2px solid #0066eb;
+    border-radius: 5px;
+    background: #0066eb;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 150px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.btn-two:hover {
+    box-shadow: 0 0 10px #0066eb;
+}
+
+.result{
+    padding: 50px;
+}
+
+.result h3{
+    margin-left: 20px;
+}
+
+.result hr{
+    width: 70px;
+    color: #0066eb;
+}
+
+
+
+.result-card{
+    border: 1px solid black;
+    padding: 30px;
+    height: 400px;
+    border-radius: 20px;
+        display: flex;
+    justify-content: center;
+    align-items: center;
 }
