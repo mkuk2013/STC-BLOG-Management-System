@@ -1,58 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STC BLOG Management System</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
     <!-- header  -->
-     <header>
+    <header>
         <nav>
             <div class="title">
-                <img src="/Images/logo.webp" alt="">
+                <img src="Images/logo.webp" alt="">
                 <h1>STC <span id="sp-1">Blog</span></h1>
             </div>
 
             <ul>
-                <a href="#"><li>Home</li></a>
-                <a href="#"><li>Blogs</li></a>
-                <a href="#"><li>Categories</li></a>
-                <a href="#"><li>About</li></a>
-                <a href="#"><li>Contact</li></a>
+                <a href="#">
+                    <li>Home</li>
+                </a>
+                <a href="#">
+                    <li>Blogs</li>
+                </a>
+                <a href="#">
+                    <li>Categories</li>
+                </a>
+                <a href="#">
+                    <li>About</li>
+                </a>
+                <a href="#">
+                    <li>Contact</li>
+                </a>
             </ul>
 
             <div class="btns">
                 <a href="#"><button>Login</button></a>
             </div>
         </nav>
-     </header>
+    </header>
 
-     <!-- blog section -->
+    <!-- blog section -->
 
-     <section class="blog" id="blogs">
+    <section class="blog" id="blogs">
+        <div class="blog-h">
+            <h2><span id="blog-design">Create</span> New <span id="blog-resign">Blog</span></h2>
+            <p>Share your thoughts width the world</p>
+        </div>
         <div class="blog-form">
-            <form>
-                <label>Blog Name:</label>
-                <input type="text">
 
-                <label>Select Categories:</label>
+            <div class="write-one">
+                <div class="write-icon-one"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <path
+                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                        <path fill-rule="evenodd"
+                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                    </svg><label>Blog Name:</label></div>
+
+                <input type="text">
+            </div>
+
+
+            <div class="write-two">
+                <div class="write-icon-two"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-app-indicator" viewBox="0 0 16 16">
+                        <path
+                            d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1z" />
+                        <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                    </svg><label>Categories:</label></div>
+
                 <select>
-                    <option value="html">Html</option>
-                    <option value="Javascript">Javascript</option>
-                    <option value="css">Css</option>
-                    <option value="Java">java</option>
-                    <option value="python">Python</option>
+                    <option>HTML</option>
+                    <option>HTML</option>
+                    <option>HTML</option>
+                    <option>HTML</option>
+                    <option>HTML</option>
                 </select>
 
-                <label>Blog Description:</label>
+            </div>
+
+            <div class="write-three">
+
+                <div class="write-icon-three"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-file-earmark-ppt-fill" viewBox="0 0 16 16">
+                        <path d="M8.188 10H7V6.5h1.188a1.75 1.75 0 1 1 0 3.5" />
+                        <path
+                            d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2zM7 5.5a1 1 0 0 0-1 1V13a.5.5 0 0 0 1 0v-2h1.188a2.75 2.75 0 0 0 0-5.5z" />
+                    </svg><label>Blog Description:</label></div>
+
                 <textarea></textarea>
-            </form>
+
+            </div>
+
+            <div class="blog-btns">
+                <button class="btn-one"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                        <path
+                            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                        <path fill-rule="evenodd"
+                            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                    </svg> Clear</button>
+                <button class="btn-two"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                    </svg> Create</button>
+            </div>
+
         </div>
-     </section>
+    </section>
+
+
+    <section class="result">
+
+        <div class="result-heading">
+        <h3>Your Blogs</h3>
+        <hr>
+        </div>
+
+            <div class="result-card">
+                <h3 id="result">--Not Found--</h3>
+            </div>
+
+    </section>
+
 
 </body>
+
 </html>
