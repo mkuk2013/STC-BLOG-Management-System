@@ -2,9 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #181b1c;
+    color: white;
 }
 body::selection{
     background: #072f64;
@@ -13,9 +16,11 @@ body::selection{
 header{
     background: transparent;
     padding: 10px 0;
-    position: static;
+    position: sticky;
     top: 0;
     left: 0;
+    z-index: 99;
+    backdrop-filter: blur(10px);
 }
 header nav{
     display: flex;
@@ -130,7 +135,7 @@ header .btns button:hover{
     justify-content: start;
     align-items: center;
     gap: 20px;
-    margin: 10px 0;
+    margin: 10px -10px;
 }
 #hero .btn #bt-1{
     background-color: #0066eb;
@@ -174,3 +179,170 @@ header .btns button:hover{
     }
 }
 /* Features Section */
+#features{
+    padding: 100px 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fafcff;
+}
+#features .f-tab{
+    padding: 5px 20px;
+    background-color: #e8f3fc;
+    color: #0069fc;
+    border-radius: 50px;
+    font-weight: 600;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#features h1{
+    font-size: 50px;
+    font-weight: 900;
+}
+#features p{
+    color: #767b85;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+/* feature-card */
+#features .feature-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 0 50px;
+}
+#features .feature-card .f-card{
+    background-color: #fcfcfc;
+    /* border: 2px solid red; */
+    border-radius: 5px;
+    padding: 20px 20px;
+    box-shadow: 0 0 6px #a0a0a0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.2s;
+}
+#features .feature-card .f-card:hover{
+    transform: translateY(-10px);
+}
+#features .feature-card .f-card h3{
+    font-size: 18px;
+    font-weight: 900;
+    padding: 10px 0;
+}
+#features .feature-card .f-card p{
+    letter-spacing: 0;
+    line-height: 20px;
+}
+#features .feature-card .f-card .f-line{
+    width: 100px;
+    height: 3px;
+    background-color: #0066eb;
+}
+/* card 1 */
+#features .feature-card .f-card #f-c-1{
+    background-color: #ebf5ff;
+    /* padding: 10px 10px; */
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+/* card 2 */
+#features .feature-card .f-card #f-c-2{
+    background-color: #e1faf5;
+    /* padding: 10px 10px; */
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* card 3 */
+#features .feature-card .f-card #f-c-3{
+    background-color: #f2edfc;
+    /* padding: 10px 10px; */
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* card 4 */
+#features .feature-card .f-card #f-c-4{
+    background-color: #fff4e8;
+    /* padding: 10px 10px; */
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* card 5 */
+#features .feature-card .f-card #f-c-5{
+    background-color: #ffebf1;
+    /* padding: 10px 10px; */
+    
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* card 6 */
+#features .feature-card .f-card #f-c-6{
+    background-color: #e6f2fc;
+    /* padding: 10px 10px; */
+    
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* card 7 */
+#features .feature-card .f-card #f-c-7{
+    background-color: #e1faf6;
+    /* padding: 10px 10px; */
+    
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* card 8 */
+#features .feature-card .f-card #f-c-8{
+    background-color: #e8f2fc;
+    /* padding: 10px 10px; */
+    
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* Latest Blogs */
