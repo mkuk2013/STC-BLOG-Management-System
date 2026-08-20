@@ -76,6 +76,8 @@ header .title #sp-1 {
 }
 header .btns{
     overflow: hidden;
+    /* border: 2px solid red; */
+    border-radius: 5px;
 }
 header .btns button {
     padding: 10px 40px;
@@ -86,7 +88,6 @@ header .btns button {
     font-size: 18px;
     font-weight: 600;
     color: #0066eb;
-    overflow: hidden;
     transition: 0.3s;
 }
 
@@ -94,7 +95,8 @@ header .btns button:hover {
     background-color: #0066eb;
     color: white;
     cursor: pointer;
-    transform: scale(1.4);
+    border-radius: 5px;
+    transform: scale(1.2);
 }
 
 
@@ -321,6 +323,129 @@ header .btns button:hover {
 }
 
 /* Latest Blogs */
+#Latest{
+    padding: 100px 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fafcff;
+}
+#Latest .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#Latest .l-tab {
+    padding: 0 20px;
+    background-color: #e8f3fc;
+    color: #0069fc;
+    border-radius: 50px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Latest .l-line {
+    width: 60px;
+    height: 3px;
+    background-color: #0066eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* cards  */
+
+#Latest .feature-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 0 50px;
+}
+
+#Latest .feature-card .f-card {
+    background-color: #fcfcfc;
+    border-radius: 5px;
+    padding: 20px 20px;
+    box-shadow: 0 0 6px #a0a0a0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.2s;
+}
+
+#Latest .feature-card .f-card:hover {
+    transform: translateY(-10px);
+}
+
+#Latest .feature-card .f-card h3 {
+    font-size: 18px;
+    font-weight: 900;
+    padding: 10px 0;
+}
+
+#Latest .feature-card .f-card p {
+    letter-spacing: 0;
+    line-height: 20px;
+}
+
+#Latest .feature-card .f-card .f-line {
+    width: 60px;
+    height: 3px;
+    background-color: #0066eb;
+}
+
+#Latest .feature-card .f-card #f-c-1,
+#Latest .feature-card .f-card #f-c-2,
+#Latest .feature-card .f-card #f-c-3,
+#Latest .feature-card .f-card #f-c-4,
+#Latest .feature-card .f-card #f-c-5,
+#Latest .feature-card .f-card #f-c-6,
+#Latest .feature-card .f-card #f-c-7,
+#Latest .feature-card .f-card #f-c-8 {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+#Latest .feature-card .f-card #f-c-1 {
+    background-color: #ebf5ff;
+}
+
+#Latest .feature-card .f-card #f-c-2 {
+    background-color: #e1faf5;
+}
+
+#Latest .feature-card .f-card #f-c-3 {
+    background-color: #f2edfc;
+}
+
+#Latest .feature-card .f-card #f-c-4 {
+    background-color: #fff4e8;
+}
+
+#Latest .feature-card .f-card #f-c-5 {
+    background-color: #ffebf1;
+}
+
+#Latest .feature-card .f-card #f-c-6 {
+    background-color: #e6f2fc;
+}
+
+
+
+
+
 
 
 
