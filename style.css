@@ -170,10 +170,12 @@ header .btns button:hover {
 
 #hero .right-c img {
     height: 400px;
-    width: 350px;
+    width: 380px;
     object-fit: cover;
     box-shadow: 0 0 10px #0066eb;
     border-radius: 5px;
+    border: none;
+    outline: none;
     animation: img 5s forwards infinite;
 }
 
