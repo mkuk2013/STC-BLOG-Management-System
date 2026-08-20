@@ -11,15 +11,19 @@ body {
 header {
     background: transparent;
     padding: 10px 0;
-    position: static;
+    position: sticky;
     top: 0;
     left: 0;
+    z-index: 99;
 }
 
 header nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
 header ul {
@@ -93,7 +97,7 @@ header .btns button:hover {
     background-color: #0066eb;
     color: white;
     cursor: pointer;
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
 }
 
 
