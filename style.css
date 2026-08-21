@@ -99,7 +99,7 @@ header .btns button:hover {
     color: white;
     cursor: pointer;
     border-radius: 5px;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 
@@ -196,8 +196,8 @@ header .btns button:hover {
     }
 }
 
-/* Feature Section  */
 
+/* Feature Section  */
 #features {
     padding: 100px 10px;
     text-align: center;
@@ -218,6 +218,7 @@ header .btns button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: title 5s forwards infinite;
 }
 
 #features h1 {
@@ -327,18 +328,28 @@ header .btns button:hover {
     border-radius: 50%;
 }
 
-
+@keyframes title{
+    0%{
+        transform: translateY(5px);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(5px);
+    }
+}
 
 /* Latest Blogs */
 #Latest {
     padding: 100px 10px;
-    text-align: center;
+    /* text-align: center; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    background-color: #fafcff;
+    background-color: #ffffff;
 }
 
 #Latest .title {
@@ -355,73 +366,118 @@ header .btns button:hover {
     color: #0069fc;
     border-radius: 50px;
     font-weight: 600;
+    font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: title 5s forwards infinite;
 }
 
 #Latest .l-line {
-    width: 60px;
+    width: 50px;
     height: 3px;
     background-color: #0066eb;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+#Latest .title p{
+    color: #767b85;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+}
 
 /* cards  */
-
 #Latest .Latest-card {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 350px 350px 350px;
     gap: 40px;
-    /* padding: 0 50px; */
-}
-#Latest .Latest-card .l-card img{
-    height: 100px;
-    width: 100%;
-    object-fit: cover;
-}
-#Latest .Latest-card .l-card .l-dis{
-    /* border: 2px solid red; */
-    padding: 30px 20px;
+    border-radius: 5px;
 }
 #Latest .Latest-card .l-card {
     background-color: #fcfcfc;
     border-radius: 5px;
-    /* padding: 20px 20px; */
-    box-shadow: 0 0 6px #a0a0a0;
+    border: 1px solid #e6ebf2;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
+    /* padding: 0 10px; */
     transition: 0.2s;
 }
-
-#Latest .Latest-card .l-card:hover {
+#Latest .Latest-card .l-card:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transform: translateY(-10px);
 }
-
-#Latest .Latest-card .l-card h3 {
+#Latest .Latest-card .l-card .l-img{
+    border-radius: 5px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+#Latest .Latest-card .l-card:hover img{
+    transform: scale(1.2);
+}
+#Latest .Latest-card .l-card img{
+    height: 200px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+#Latest .Latest-card .l-card .l-dis{
+    padding: 20px 20px;
+}
+#Latest .Latest-card .l-card .l-dis .l-c-tab p{
+    background-color: #edf1ff;
+    color: #2856d4;
+    padding: 5px 5px 5px 20px;
+    width: 200px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+#Latest .Latest-card .l-card .l-dis h3{
     font-size: 18px;
-    font-weight: 900;
     padding: 10px 0;
 }
 
 #Latest .Latest-card .l-card p {
     letter-spacing: 0;
     line-height: 20px;
+    color: #767b85;
 }
 
 #Latest .Latest-card .l-card .l-line {
-    width: 60px;
-    height: 3px;
+    width: 100%;
+    height: 1px;
     background-color: #0066eb;
+    margin-bottom: 20px;
 }
-
-
-
-
+#Latest .Latest-card .l-card .l-dis2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    /* margin: 10px 0 10px 0; */
+}
+#Latest .Latest-card .l-card .l-dis2 button{
+    padding: 20px 20px;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: -10px;
+    transition: 0.3s;
+}
+#Latest .Latest-card .l-card:hover button{
+    color: #0066eb;
+}
 
 
 
