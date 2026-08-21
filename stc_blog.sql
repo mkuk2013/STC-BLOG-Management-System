@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS stc_blog
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
+
+USE stc_blog;
+
+CREATE TABLE IF NOT EXISTS blogs (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(150) NOT NULL,
+    category VARCHAR(80) NOT NULL,
+    description TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
