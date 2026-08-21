@@ -324,6 +324,8 @@ header .btns button:hover {
     border-radius: 50%;
 }
 
+
+
 /* Latest Blogs */
 #Latest{
     padding: 100px 10px;
@@ -362,19 +364,28 @@ header .btns button:hover {
     justify-content: center;
     align-items: center;
 }
+
 /* cards  */
 
-#Latest .feature-card {
+#Latest .Latest-card {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    padding: 0 50px;
+    gap: 40px;
+    /* padding: 0 50px; */
 }
-
-#Latest .feature-card .f-card {
+#Latest .Latest-card .l-card img{
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+}
+#Latest .Latest-card .l-card .l-dis{
+    /* border: 2px solid red; */
+    padding: 30px 20px;
+}
+#Latest .Latest-card .l-card {
     background-color: #fcfcfc;
     border-radius: 5px;
-    padding: 20px 20px;
+    /* padding: 20px 20px; */
     box-shadow: 0 0 6px #a0a0a0;
     display: flex;
     justify-content: center;
@@ -383,67 +394,26 @@ header .btns button:hover {
     transition: 0.2s;
 }
 
-#Latest .feature-card .f-card:hover {
+#Latest .Latest-card .l-card:hover {
     transform: translateY(-10px);
 }
 
-#Latest .feature-card .f-card h3 {
+#Latest .Latest-card .l-card h3 {
     font-size: 18px;
     font-weight: 900;
     padding: 10px 0;
 }
 
-#Latest .feature-card .f-card p {
+#Latest .Latest-card .l-card p {
     letter-spacing: 0;
     line-height: 20px;
 }
 
-#Latest .feature-card .f-card .f-line {
+#Latest .Latest-card .l-card .l-line {
     width: 60px;
     height: 3px;
     background-color: #0066eb;
 }
-
-#Latest .feature-card .f-card #f-c-1,
-#Latest .feature-card .f-card #f-c-2,
-#Latest .feature-card .f-card #f-c-3,
-#Latest .feature-card .f-card #f-c-4,
-#Latest .feature-card .f-card #f-c-5,
-#Latest .feature-card .f-card #f-c-6,
-#Latest .feature-card .f-card #f-c-7,
-#Latest .feature-card .f-card #f-c-8 {
-    height: 80px;
-    width: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-}
-
-#Latest .feature-card .f-card #f-c-1 {
-    background-color: #ebf5ff;
-}
-
-#Latest .feature-card .f-card #f-c-2 {
-    background-color: #e1faf5;
-}
-
-#Latest .feature-card .f-card #f-c-3 {
-    background-color: #f2edfc;
-}
-
-#Latest .feature-card .f-card #f-c-4 {
-    background-color: #fff4e8;
-}
-
-#Latest .feature-card .f-card #f-c-5 {
-    background-color: #ffebf1;
-}
-
-#Latest .feature-card .f-card #f-c-6 {
-    background-color: #e6f2fc;
-}
-
 
 
 
