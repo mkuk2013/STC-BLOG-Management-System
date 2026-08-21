@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blogs | STC Blog Management System</title>
+
+    <link rel="shortcut icon" href="Images/logo.webp" type="image/x-icon">
+
+    <!-- Your existing CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        crossorigin="anonymous">
+
+    <style>
+        .blogs-page {
+            min-height: calc(100vh - 90px);
+            padding: 50px 8%;
+            background: #f5faff;
+        }
+
+        .blogs-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .blogs-top h2 {
+            margin: 0;
+            color: #1e293b;
+            font-size: 38px;
+        }
+
+        .blogs-top p {
+            margin: 8px 0 0;
+            color: #64748b;
+        }
+
+        .add-blog-btn {
+            border: 2px solid #0066eb;
+            border-radius: 5px;
+            padding: 11px 20px;
+            background: #0066eb;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .add-blog-btn span {
+            margin-right: 6px;
+            font-size: 20px;
+            line-height: 0;
+        }
+
+        .add-blog-btn:hover {
+            box-shadow: 0 0 10px #0066eb;
+            transform: translateY(-2px);
+        }
+
+        .blogs-page .result-card {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 20px;
+            min-height: 300px;
+            height: auto;
+            padding: 35px;
+            border: 0;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 102, 235, 0.15);
+        }
+
+        .empty-blog {
+            width: 100%;
+            padding: 55px 20px;
+            text-align: center;
+            color: #64748b;
+        }
+
+        .empty-blog h3 {
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+
+        .empty-blog p {
+            margin: 0;
+        }
+
+        .created-blog {
+            flex: 1 1 280px;
+            min-width: 0;
+            padding: 22px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+        }
+
+        .created-blog h3 {
+            margin: 0 0 10px;
+            color: #1e293b;
+        }
+
+        .blog-category {
+            display: inline-block;
+            margin-bottom: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: #e8f3fc;
+            color: #0069fc;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .created-blog p {
+            margin: 0;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 700px) {
+            .blogs-page {
+                padding: 35px 20px;
+            }
+
+            .blogs-top {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .blogs-top h2 {
+                font-size: 32px;
+            }
+
+            .add-blog-btn {
+                width: 100%;
+            }
+
+            .blogs-page .result-card {
+                padding: 20px;
+            }
+        }
+
+        /* =========================================
+           BLOG MODAL
+        ========================================= */
+
+        .blog-modal {
+            position: fixed !important;
+            inset: 0 !important;
+
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+
+            padding: 20px;
+            margin: 0 !important;
+
+            background: rgba(15, 23, 42, 0.72);
+
+            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(7px);
+
+            z-index: 99999 !important;
+
+            box-sizing: border-box;
+        }
+
+
+        /* =========================================
+           MODAL BOX
+        ========================================= */
+
+        .blog-modal-box {
+            position: relative;
+
+            width: 500px;
+            max-width: 100%;
+            max-height: none;
+
+            overflow-y: visible;
+            overflow-x: hidden;
+
+            margin: 0 !important;
+            padding: 0 0 25px !important;
+
+            background: #ffffff;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.25),
+                0 10px 30px rgba(0, 0, 0, 0.12);
+
+            box-sizing: border-box;
+
+            animation: modalSlide 0.3s ease;
+        }
+
+
+        /* =========================================
+           MODAL HEADING
+        ========================================= */
+
+        .blog-modal-box h2 {
+            position: relative;
+
+            margin: 0 !important;
+            padding: 28px 30px 24px !important;
+
+            color: #ffffff !important;
+
+            font-size: 24px !important;
+            font-weight: 700 !important;
+            line-height: 1.3;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6366f1 0%,
+                    #7c3aed 50%,
+                    #9333ea 100%
+                );
+
+            box-sizing: border-box;
+        }
+
+
+        .blog-modal-box h2::after {
+            content: "Share your thoughts with the world";
+
+            display: block;
+
+            margin-top: 6px;
+
+            font-size: 13px;
+            font-weight: 400;
+
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+
+        /* =========================================
+           LABEL
+        ========================================= */
+
+        .blog-modal-box label {
+            display: block !important;
+
+            margin: 20px 30px 8px !important;
+
+            color: #334155 !important;
+
+            font-size: 13px !important;
+            font-weight: 700 !important;
+
+            line-height: 1.4;
+
+            letter-spacing: 0.2px;
+        }
+
+
+        /* =========================================
+           INPUT / SELECT / TEXTAREA
+        ========================================= */
+
+        .blog-modal-box input,
+        .blog-modal-box select,
+        .blog-modal-box textarea {
+            display: block !important;
+
+            width: calc(100% - 60px) !important;
+
+            height: auto !important;
+
+            margin: 0 30px !important;
+
+            padding: 13px 15px !important;
+
+            box-sizing: border-box !important;
+
+            border: 1px solid #e2e8f0 !important;
+
+            border-radius: 10px !important;
+
+            background: #f8fafc !important;
+
+            color: #1e293b !important;
+
+            font-family: inherit;
+            font-size: 14px !important;
+
+            line-height: 1.4;
+
+            outline: none;
+
+            transition:
+                border-color 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        /* Placeholder */
+
+        .blog-modal-box input::placeholder,
+        .blog-modal-box textarea::placeholder {
+            color: #94a3b8;
+        }
+
+
+        /* Focus */
+
+        .blog-modal-box input:focus,
+        .blog-modal-box select:focus,
+        .blog-modal-box textarea:focus {
+            background: #ffffff !important;
+
+            border-color: #6366f1 !important;
+
+            box-shadow:
+                0 0 0 4px rgba(99, 102, 241, 0.10) !important;
+
+            transform: translateY(-1px);
+        }
+
+
+        /* =========================================
+           SELECT
+        ========================================= */
+
+        .blog-modal-box select {
+            cursor: pointer;
+
+            appearance: auto;
+        }
+
+
+        /* =========================================
+           TEXTAREA
+        ========================================= */
+
+        .blog-modal-box textarea {
+            min-height: 125px !important;
+
+            resize: vertical;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================================
+           BUTTON AREA
+        ========================================= */
+
+        .modal-buttons {
+            display: flex !important;
+
+            justify-content: flex-end !important;
+            align-items: center !important;
+
+            gap: 10px;
+
+            margin-top: 25px !important;
+
+            padding: 20px 30px 0 !important;
+
+            border-top: 1px solid #f1f5f9;
+
+            box-sizing: border-box;
+        }
+
+
+        /* =========================================
+           ALL BUTTONS
+        ========================================= */
+
+        .modal-buttons button {
+            width: auto !important;
+            height: auto !important;
+
+            margin: 0 !important;
+
+            border: none !important;
+
+            padding: 11px 20px !important;
+
+            border-radius: 9px !important;
+
+            font-family: inherit;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+
+            line-height: 1.4;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+        }
+
+
+        /* =========================================
+           CANCEL
+        ========================================= */
+
+        .cancel-btn {
+            color: #475569 !important;
+
+            background: #f1f5f9 !important;
+        }
+
+        .cancel-btn:hover {
+            color: #475569 !important;
+
+            background: #e2e8f0 !important;
+
+            transform: translateY(-1px);
+        }
+
+
+        /* =========================================
+           CREATE BLOG
+        ========================================= */
+
+        .submit-btn {
+            color: #ffffff !important;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6366f1,
+                    #7c3aed
+                ) !important;
+
+            box-shadow:
+                0 5px 15px rgba(99, 102, 241, 0.25);
+        }
+
+        .submit-btn:hover {
+            color: #ffffff !important;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px rgba(99, 102, 241, 0.35);
+        }
+
+        .submit-btn:active,
+        .cancel-btn:active {
+            transform: translateY(0);
+        }
+
+
+        /* =========================================
+           ANIMATION
+        ========================================= */
+
+        @keyframes modalSlide {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(25px)
+                    scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            .blog-modal {
+                padding: 15px !important;
+            }
+
+            .blog-modal-box {
+                width: 100% !important;
+
+                max-height: none;
+
+                border-radius: 16px;
+            }
+
+            .blog-modal-box h2 {
+                padding: 23px 22px 20px !important;
+
+                font-size: 21px !important;
+            }
+
+            .blog-modal-box label {
+                margin-left: 22px !important;
+                margin-right: 22px !important;
+            }
+
+            .blog-modal-box input,
+            .blog-modal-box select,
+            .blog-modal-box textarea {
+                width: calc(100% - 44px) !important;
+
+                margin-left: 22px !important;
+                margin-right: 22px !important;
+            }
+
+            .modal-buttons {
+                padding-left: 22px !important;
+                padding-right: 22px !important;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <nav>
+
+            <div class="title">
+
+                <img src="Images/logo.webp" alt="STC Logo">
+
+                <h1>
+                    STC <span id="sp-1">Blog</span>
+                </h1>
+
+            </div>
+
+
+            <ul>
+
+                <a href="index.html">
+                    <li>Home</li>
+                </a>
+
+                <a href="blog.html">
+                    <li>Blogs</li>
+                </a>
+
+                <a href="#">
+                    <li>About</li>
+                </a>
+
+                <a href="#">
+                    <li>Contact</li>
+                </a>
+
+            </ul>
+
+
+            <div class="btns">
+
+                <a href="#">
+                    <button type="button">Login</button>
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= BLOGS ================= -->
+
+    <section class="blogs-page">
+
+        <div class="blogs-top">
+
+            <div>
+
+                <h2>
+                    <span id="blog-design">Your</span>
+                    Blogs
+                </h2>
+
+                <p>
+                    Manage and create your blog posts
+                </p>
+
+            </div>
+
+
+            <!-- ADD BLOG BUTTON -->
+
+            <button
+                id="addBlogBtn"
+                class="add-blog-btn"
+                type="button">
+
+                <span>+</span>
+
+                Add Blog
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ================= BLOG CONTAINER ================= -->
+
+        <div
+            class="result-card"
+            id="resultCard">
+
+            <div
+                class="empty-blog"
+                id="emptyBlog">
+
+                <h3>
+                    No Blogs Found
+                </h3>
+
+                <p>
+                    You haven't created any blogs yet.
+                    Click "Add Blog" to create your first blog.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const addBlogBtn =
+            document.getElementById("addBlogBtn");
+
+        const resultCard =
+            document.getElementById("resultCard");
+
+
+        /* =====================================
+           ADD BLOG BUTTON
+        ===================================== */
+
+        addBlogBtn.addEventListener("click", function () {
+
+            /* Modal */
+
+            const modal =
+                document.createElement("div");
+
+            modal.classList.add("blog-modal");
+
+
+            /* Modal Box */
+
+            const modalBox =
+                document.createElement("div");
+
+            modalBox.classList.add("blog-modal-box");
+
+
+            /* =====================================
+               HEADING
+            ===================================== */
+
+            const heading =
+                document.createElement("h2");
+
+            heading.textContent =
+                "Create New Blog";
+
+
+            /* =====================================
+               BLOG NAME
+            ===================================== */
+
+            const nameLabel =
+                document.createElement("label");
+
+            nameLabel.textContent =
+                "Blog Name";
+
+
+            const nameInput =
+                document.createElement("input");
+
+            nameInput.type = "text";
+
+            nameInput.placeholder =
+                "Enter blog name";
+
+
+            /* =====================================
+               CATEGORY
+            ===================================== */
+
+            const categoryLabel =
+                document.createElement("label");
+
+            categoryLabel.textContent =
+                "Blog Category";
+
+
+            const categorySelect =
+                document.createElement("select");
+
+
+            const categories = [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Web Development",
+                "Technology"
+            ];
+
+
+            categories.forEach(function (category) {
+
+                const option =
+                    document.createElement("option");
+
+                option.value = category;
+
+                option.textContent = category;
+
+                categorySelect.appendChild(option);
+
+            });
+
+
+            /* =====================================
+               DESCRIPTION
+            ===================================== */
+
+            const descriptionLabel =
+                document.createElement("label");
+
+            descriptionLabel.textContent =
+                "Blog Description";
+
+
+            const descriptionInput =
+                document.createElement("textarea");
+
+            descriptionInput.placeholder =
+                "Enter blog description";
+
+
+            /* =====================================
+               BUTTONS
+            ===================================== */
+
+            const buttons =
+                document.createElement("div");
+
+            buttons.classList.add("modal-buttons");
+
+
+            /* Cancel */
+
+            const cancelBtn =
+                document.createElement("button");
+
+            cancelBtn.type = "button";
+
+            cancelBtn.textContent =
+                "Cancel";
+
+            cancelBtn.classList.add(
+                "cancel-btn"
+            );
+
+
+            /* Create */
+
+            const createBtn =
+                document.createElement("button");
+
+            createBtn.type = "button";
+
+            createBtn.textContent =
+                "Create Blog";
+
+            createBtn.classList.add(
+                "submit-btn"
+            );
+
+
+            buttons.appendChild(cancelBtn);
+            buttons.appendChild(createBtn);
+
+
+            /* =====================================
+               APPEND MODAL
+            ===================================== */
+
+            modalBox.appendChild(heading);
+
+            modalBox.appendChild(nameLabel);
+            modalBox.appendChild(nameInput);
+
+            modalBox.appendChild(categoryLabel);
+            modalBox.appendChild(categorySelect);
+
+            modalBox.appendChild(descriptionLabel);
+            modalBox.appendChild(descriptionInput);
+
+            modalBox.appendChild(buttons);
+
+            modal.appendChild(modalBox);
+
+            document.body.appendChild(modal);
+
+
+            /* Focus */
+
+            nameInput.focus();
+
+
+            /* =====================================
+               CANCEL
+            ===================================== */
+
+            cancelBtn.addEventListener(
+                "click",
+                function () {
+
+                    modal.remove();
+
+                }
+            );
+
+
+            /* =====================================
+               CREATE BLOG
+            ===================================== */
+
+            createBtn.addEventListener(
+                "click",
+                async function () {
+
+                    const blogName =
+                        nameInput.value.trim();
+
+                    const category =
+                        categorySelect.value;
+
+                    const description =
+                        descriptionInput.value.trim();
+
+
+                    /* Validation */
+
+                    if (
+                        blogName === "" ||
+                        description === ""
+                    ) {
+
+                        alert(
+                            "Please fill all fields!"
+                        );
+
+                        return;
+                    }
+
+                    createBtn.disabled = true;
+
+                    try {
+                        const response = await fetch("save_blog.php", {
+                            method: "POST",
+                            body: new URLSearchParams({
+                                blogName: blogName,
+                                category: category,
+                                description: description
+                            })
+                        });
+
+                        const result = await response.text();
+
+                        if (result !== "success") {
+                            throw new Error("Could not save the blog.");
+                        }
+
+                        /* Remove empty message */
+
+                        const emptyBlog =
+                            document.getElementById(
+                                "emptyBlog"
+                            );
+
+                        if (emptyBlog) {
+                            emptyBlog.remove();
+                        }
+
+
+                        /* =====================================
+                           BLOG CARD
+                        ===================================== */
+
+                        const blog =
+                            document.createElement("div");
+
+                        blog.classList.add(
+                            "created-blog"
+                        );
+
+
+                        /* Title */
+
+                        const title =
+                            document.createElement("h3");
+
+                        title.textContent =
+                            blogName;
+
+
+                        /* Category */
+
+                        const categoryTag =
+                            document.createElement("span");
+
+                        categoryTag.textContent =
+                            category;
+
+                        categoryTag.classList.add(
+                            "blog-category"
+                        );
+
+
+                        /* Description */
+
+                        const desc =
+                            document.createElement("p");
+
+                        desc.textContent =
+                            description;
+
+
+                        /* Append */
+
+                        blog.appendChild(title);
+
+                        blog.appendChild(categoryTag);
+
+                        blog.appendChild(desc);
+
+
+                        /* Add blog */
+
+                        resultCard.appendChild(blog);
+
+
+                        /* Close modal */
+
+                        modal.remove();
+                    } catch (error) {
+                        alert(error.message);
+                    } finally {
+                        createBtn.disabled = false;
+                    }
+
+                }
+            );
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+
