@@ -592,7 +592,7 @@ header .btns button:hover {
 
     padding: 5px 10px;
 }
-#explore .e-cards .e-card:hover .e-m-b{
+#explore .e-cards .e-card  .e-m-b:hover{
     background-color: #b8deff;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
     border-radius: 5px;
